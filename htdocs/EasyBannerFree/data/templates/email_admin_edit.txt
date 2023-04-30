@@ -1,0 +1,9 @@
+Subject: Banner Exchange Account Edited
+
+An account has been edited. If you want review this account, you have to go to #%adminfile%#
+Account name: #%username%#
+Password: #%password%#
+URL: #%siteurl%#
+Banner URL: #%urlbanner%#
+Email: #%memberemail%#
+

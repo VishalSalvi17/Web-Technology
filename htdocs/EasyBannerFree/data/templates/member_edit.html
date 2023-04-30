@@ -1,0 +1,35 @@
+
+#%info%#
+<table border="0" cellspacing="1" cellpadding="5" width="500" class="table1">
+<tr><td align="center" width="100%">
+<form action="member.php" method="POST">
+<table border="0" width="300" cellspacing="3" cellpadding="0">
+<TR>
+<INPUT type="hidden" value="edited" name="action">
+<INPUT type="hidden" value="#%username%#" name="username">
+<INPUT type="hidden" value="#%password%#" name="password">
+ <TD align="left" nowrap><span class="text13">Username </span></TD>
+ <TD><span class="text13">#%username%#</span></TD></TR>
+<TR>
+ <TD align="left" valign="top" nowrap><span class="text13">Password </span></TD>
+ <TD><INPUT maxLength="15" size="15" name="newpass" value="#%password%#" class="field11"></TD></TR>
+<TR>
+ <TD align="left" valign="top" nowrap><span class="text13">Email </span></TD>
+ <TD><INPUT size="60" maxLength="255" name="email" value="#%email%#" class="field11"></TD></TR>
+<TR>
+ <TD align="left" valign="top" nowrap><span class="text13">Site URL </span></TD>
+ <TD><INPUT size="60" maxLength="255" name="siteurl" value="#%siteurl%#" class="field11"></TD></TR>
+<TR>
+ <TD align="left" valign="top" nowrap><span class="text13">Banner URL </span></TD>
+ <TD><INPUT size="60" maxLength="255" name="urlbanner" value="#%urlbanner%#" class="field11"></TD></TR>
+<TR>
+ <TD align="center" colspan="2"><input type="submit" name="B1" value="Submit" class="button10"></TD>
+</TR></form>
+</table>
+</td></tr></table>
+
+<form action="member.php" method="POST">
+<INPUT type="hidden" value="#%username%#" name="username">
+<INPUT type="hidden" value="#%password%#" name="password">
+<input type="submit" name="B1" value="Back to home" class="button10">
+</form>

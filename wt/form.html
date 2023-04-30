@@ -1,0 +1,48 @@
+ <!DOCTYPE html>
+<html>
+<body bgcolor="#E6E6FA">
+
+<h1>Welcome</h1>
+<h2>Feedback Form</h2>
+ <form>
+  First name:<br>
+  <input type="text" name="firstname"><br>
+  Last name:<br>
+  <input type="text" name="lastname"><br>
+  <input type="hidden" id="custId" name="custId" value="3487">
+ 
+   Email id: <br>
+   <input type="email" name="email"><br><br>
+
+    Gender:<br>
+  <input type="radio" name="gender" value="male" checked> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+  <input type="radio" name="gender" value="other"> Other<br><br>
+
+   State   :<br>
+    <select >
+        <option>Maharashta</option>
+        <option>Gujrat</option>
+        <option>Madhyapradesh</option>
+        <option>Delhi</option>
+    </select>
+    <br><br>
+
+	
+          Comments:<br>
+          <textarea class="form-control" type="textarea" name="comments" id="comments" placeholder="Your Comments" maxlength="6000" rows="7"></textarea>
+   <br><br> <form action="myform.cgi">
+   <input type="file" name="fileupload" value="fileupload" id="fileupload"> 
+   <label for="fileupload"> Select a file to upload</label> 
+   <input type="hidden" id="ipaddr" name="ipaddr" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>">
+   <input type="hidden" id="referer" name="referer" value="<?php echo $_SERVER['HTTP_REFERER']; ?>"> <br>
+
+ </form>
+
+
+<br> <br><input type="checkbox" name="true" value="true"> All given information is correct.<br>
+    <center><input type="submit" value="Submit"></center>
+</form> 
+
+</body>
+</html>

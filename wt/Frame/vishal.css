@@ -1,0 +1,185 @@
+html
+
+{
+
+scroll-behavior:smooth;
+
+}
+
+*{
+
+margin: 0;
+
+margin-bottom: 500;
+ 
+
+padding : 0;
+
+box-sizing: border-box;
+
+text-decoration: none;
+
+}
+
+body{
+
+font-family: 'Raleway', sans-serif;
+
+background: #000;
+
+}
+
+.background{
+
+background: url('https://thumbs.gfycat.com/ImmenseImpoliteGartersnake-max-1mb.gif') no-repeat;
+
+/*https://thumbs.gfycat.com/ImmenseImpoliteGartersnake-max-1mb.gif*/
+
+/*https://thumbs.gfycat.com/CelebratedQualifiedAngora-size_restricted.gif*/
+
+background-size: cover;
+
+height: 100vh;
+
+display: flex;
+
+}
+
+.text{
+
+margin-top: 35vh;
+
+flex: 1;
+
+}
+
+.box{
+
+margin-top: 12vh;
+
+flex: 1;
+
+}
+
+.text{
+
+margin-left: 10%;
+
+font-weight: 900px;
+
+}
+
+.box{
+
+margin-left: 25%;
+
+}
+ 
+
+.text h1{
+ 
+
+font-size: 70px;
+
+color: #fff;
+
+font-weight: 500;
+
+}
+
+.text p{
+
+font-size: 20px;
+
+color: #fff;
+
+font-weight: 300;
+
+}
+
+.text p a{
+
+color: #ff0;
+
+font-weight: 700;
+
+}
+
+.text p a:hover{
+
+color: #00f;
+
+font-weight: 700;
+
+transform: translateX(10px);
+
+}
+
+.form{
+
+background: transparent;
+
+color: #fff;
+
+box-sizing: border-box;
+
+display: flex;
+
+flex-direction: column;
+
+width: 350px;
+
+padding: 10px;
+
+}
+
+input{
+
+margin: 20px 0;
+
+font-size: 20px;
+
+font-weight: 600;
+
+padding: 10px;
+
+background: transparent;
+
+border: blue;
+
+outline: blue;
+
+color: #fff;
+ 
+
+font-family: 'Raleway', sans-serif;
+
+}
+
+.username, .password, .fullname, .email{
+
+border-bottom: 1px solid #fff;
+
+}
+
+.button{
+
+background: transparent;
+
+border: 1px solid #fff;
+
+color: #fff;
+
+font-size: 18px;
+
+}
+
+.button:hover{
+
+background: #fff;
+
+color: #000;
+
+transform: translateY(-10px);
+
+}

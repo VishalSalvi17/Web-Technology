@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color:lightgreen;
+}
+
+body {
+    background-color:black;
+    font-family: sans-serif;
+}
+
+.fa-shopping-basket {
+    margin-right: 5px;
+    background-color: black;
+}
+
+.nav-link {
+    text-align: center;
+    color: white;
+}
+
+.nav-tabs .nav-item {
+    padding-top: 5px;
+    background-color: black;
+}
+
+.title-box {
+    background-color: red;
+    color:black;
+    width: 180px;
+    padding: 4px 10px;
+    height: 40px;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    display: flex;
+}
+
+.title-box h2 {
+    font-size: 24px;
+    text-emphasis-color: black;
+}
+
+.title-box::after {
+    content: '';
+    border-top: 40px solid red;
+    border-right: 50px solid transparent;
+    position: absolute;
+    display: flex;
+    margin-top: -4px;
+    margin-left: 170px;
+}

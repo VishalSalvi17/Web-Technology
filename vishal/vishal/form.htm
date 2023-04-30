@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+    <title>Form</title>
+<body style="background-color:burlywood">
+
+    <style>
+        input[type=text],input[type=email], select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+        </style>
+<br><br><h2><p style="color:blue; text-decoration:underline;" >Fill the form:</p></h2>
+<form action="/action_page.php" method="get">
+    First name: <input type="text" name="fname"><br>
+    Last name: <input type="text" name="lname"><br>
+    Email id: <input type="email" name="email"><br>
+    Gender  : <br><input type="radio" name="radio">Male<br>
+    <input type="radio" name="radio">Female<br>
+    <input type="radio" name="radio">Others<br>
+    State   :
+    <select >
+        <option>Maharashta</option>
+        <option>Gujrat</option>
+        <option>Madhyapradesh</option>
+        <option>Delhi</option>
+    </select>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+  
+<!-- </center> -->
+<!-- <h1>Projects details:</h1> -->
+
+      
+<!-- <footer><a href="https://www.facebook.com/people/Tanay-Bagayatkar/100008088078001" target="_parent">click here facebook</a></footer> -->
+</body>
+</html>

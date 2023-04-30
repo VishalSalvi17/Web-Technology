@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Contact us form validation Using Javascript</title>
+ <link rel="stylesheet" href="val.css"> 
+<script src="val1.js"></script>
+
+</head>
+
+<body>
+
+
+
+<div class="wrapper">
+
+<h2>Feedback Form</h2>
+
+<div id="error_message"></div>
+
+<form id="myform" onsubmit="return validate();"> 
+<div class="input_field">
+
+<style>
+
+h1 {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+h2  {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+ {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 90%;
+  padding: 12px;
+  border: 1px solid orange;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: orange;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: center;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+input[type=reset] {
+  background-color: orange;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: center;
+}
+
+input[type=reset]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style></head> 
+
+<body> 
+<h1 style="text-align: center"> REGISTRATION FORM </h1>		 
+<form name="RegForm" action="/submit.php" onsubmit="return validation()" method="post"> 
+	
+	<p>First Name: <input type="text" size=100 name="First Name"> </p><br>	 
+	<p> Last Name: <input type="text" size=100 name="Last Name> </p><br> 
+	<p> Username: <input type="text" size=100 name="Username"> </p><br> 
+	<p>Password: <input type="text" size=100 name="Password"> </p><br> 
+	<p>Confirm Password: <input type="text" size=100 name="Confirm Password"> </p><br> 
+	<p>Email: <input type="text" size=100 name="Email"> </p><br> 
+	<p>Confirm Email: <input type="text" size=100 name="Confirm Email"> </p><br> 
+		
+	<p><input type="submit" value="Submit" name="Submit">      
+        <input type="reset" value="Reset" name="Reset">   
+    </p> 	
+	 
+	
+</form> 
+
+
+</div>
+</body> 
+
+
+</div>
+</html> 
+
+
+

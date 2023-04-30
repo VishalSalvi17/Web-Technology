@@ -1,0 +1,9 @@
+What is your favorite color?
+red:0
+green:0
+blue:0
+yellow:0
+orange:0
+black:0
+white:0
+

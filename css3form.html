@@ -1,0 +1,235 @@
+<!DOCTYPE html> <style>
+.cancel:hover { 
+font-size: 110%;
+}
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+* {
+margin: 0; 
+padding: 0; 
+box-sizing: border-box; 
+outline: none;
+font-family: 'Josefin Sans', sans-serif
+}
+
+body { 
+background: cyan; 
+background size: cover; 
+height: 100vh
+}
+
+.wrapper {
+ position: absolute; 
+top: 50%;
+transform: translateY(-50%);
+ width: 100%;
+padding: 0 20px
+}
+
+.contact-form { 
+width: 80% ;
+max width: 550px; 
+margin: 0 auto; 
+background: dodgerblue; 
+padding: 15px;
+border : 5px ;
+ display: flex;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
+} 
+}
+
+.input-fields, .optional-fields {
+ width: 48%
+}
+
+.input, .optionalfields textarea { 
+margin: 10px 0; 
+background: transparent; 
+border: 0; 
+border bottom: 2px solid #c5ecfd; 
+padding: 10px; 
+color: #c5ecfd;
+width: 100%
+}
+
+.optional-fields textarea { 
+height: 50px
+}
+
+::-webkit-input-placeholder { 
+color: black;
+opacity: 0.5
+}
+
+::-moz-input-placeholder {
+ color: black;
+opacity: 0.5
+}
+
+::-ms-input-placeholder { 
+color: black;
+opacity: 0.5
+}
+
+.button { 
+display: inline-block; 
+border-radius: 4px; 
+background color: dodgerblue; 
+border: none;
+ color: red;
+ text-align: center; 
+font size: 28px;
+ padding: 10px;
+ width: 150px; 
+transition: all 0.5s; 
+cursor: pointer;
+margin: 5px
+}
+
+.button span { 
+cursor: pointer;
+ display: inline-block; 
+position: relative;
+transition: 0.5s
+}
+
+.button span:after {
+ content: '\00bb'; 
+position: absolute; 
+opacity: 0; top: 0;
+right: -20px;
+transition: 0.5s
+}
+
+.button:hover span {
+ padding-right: 25px
+}
+
+.button:hover span:after { 
+opacity: 1;
+right: 0
+}
+
+@media screen and (max-width:600px) {
+.contact-form {
+ flex-direction: column
+}
+
+.msg textarea {
+ height: 80px
+}
+
+.input-fields, .msg {
+ width: 100%
+}
+
+}
+</style>
+
+<script>
+ function validate()
+ { 
+var errorMessage = '';
+if (!document.getElementById('name').value.match(/^[A-Z az]{1,50}$/))
+ { if (document.getElementById('name').value.length > 50)
+ {
+errorMessage += 'Name cannot have more than 50 characters\n';
+} 
+ } if(!document.getElementById('username').value.match(/^[A-Za-z]{1,50}$/))
+{
+if (document.getElementById('username').value.length > 50) { errorMessage += 'Username cannot have more than 50 characters\n';
+} else {
+errorMessage += 'Username cannot have digits or any other special characters\n';
+}
+
+}
+ if (document.getElementById('password').value !==document.getElementById('confirmpassword').value) 
+ { errorMessage += 'Passwords do not match\n';
+} if(!document.getElementById('email').value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/))
+ { errorMessage += 'Invalid email address\n';
+}
+ if (document.getElementById('email').value !==document.getElementById('confirmemail').value) 
+ { errorMessage += 'Emails do not match\n';
+}
+if (errorMessage.length != 0) { window.alert(errorMessage); 
+return false;
+}
+window.alert('Success!! ');
+return true;
+}
+
+function hoverEvent() { 
+if (document.getElementById('name').value == "" || document.getElementById('username').value == "" || document.getElementById('password').value == "" || document.getElementById('confirmpassword').value == "" ||document.getElementById('email').value == "" || document.getElementById('confirmemail').value == "")
+ {
+      document.getElementById("myBtn").style.position = "relative";
+      var elem = document.getElementById("myBtn");
+      elem.innerHTML = "Catch Me!";
+ var pos = 0;
+ var id = setInterval(frame, 1);
+ function frame() {
+ if (pos % 4 == 1) {
+ clearInterval(id);
+ } else {
+ pos++;
+elem.style.left = Math.floor(Math.random() * 800) + 'px'; elem.style.bottom =Math.floor(Math.random() * 400) +'px';
+ }
+ }
+return false;
+}
+return true;
+}
+
+function keyPressEvent() {
+ if (document.getElementById('name').value.length !=0 && document.getElementById('username').value.length != 0 && document.getElementById('password').value.length != 0 && document.getElementById('confirmpassword').value.length != 0 && document.getElementById('email').value.length != 0&&dcument.getElementById('confirmemail').value.length != 0) 
+ {
+ var elem = document.getElementById("myBtn");
+ elem.style.position = "static";
+ elem.style.transform = "translateX(250px)";
+ elem.innerHTML = "<span>Register </span>";
+}
+}
+</script>
+
+<html lang="en"> 
+<head>
+<meta charset="utf-8">
+<title>Registration form</title>
+</head>
+<body>
+<div class="wrapper">
+<div class="contact-form">
+<div class="input-fields">
+ <div style="text-transform:uppercase;font-size: large;color: black"><b>User Registration</b></div>
+<br>
+ <p><span style="color: red;">*</span>
+ <span style="color:black;"><b>Required Field</b></span></p>
+<form action="#">
+<input onkeydown="keyPressEvent()" type="text" id="name" class="input"placeholder="Name *">
+<input onkeydown="keyPressEvent()" type="text" id="username" class="input" placeholder="Username *">
+<input onkeydown="keyPressEvent()" type="password" id="password"class="input" placeholder="Password *"> 
+<input onkeydown="keyPressEvent()" type="password" id="confirmpassword" class="input" placeholder="Confirm Password *">
+<input onkeydown="keyPressEvent()" type="text" id="email" class="input"placeholder="Email Address *">
+<input onkeydown="keyPressEvent()" type="text" id="confirmemail" class="input" placeholder="Confirm email Address *"> 
+<span style="color:black;font size: smaller;">Date of Birth</span><input class="input" type="date" name="birthdate" value="DOB"><br>
+<br><br>
+</form>
+<button id="myBtn" class="button" onmouseover="return hoverEvent()" onclick="return validate()" style="vertical align :middle ; transform: translateX(10px);">
+    <span>Register</span></button>
+</div>
+<div class="optional-fields">
+ <div style="text-transform:uppercase;font-size: large;color: black"><b>User Profile</b></div>
+<br>
+ <p><span style="color:black"><b>Optional Field</b></span></p>
+ <input type="text" class="input"placeholder="Address 1 ">
+ <input type="text" class="input"placeholder="Address 2 "> 
+<input type="text" class="input"placeholder="City ">
+ <input type="text" class="input"placeholder="Region">
+ <input type="text" class="input"placeholder="Country">
+<input type="number" class="input" placeholder="Postal / ZIP Code">
+<input type="tel" class="input" placeholder="Phone "pattern="[0-9]{1}[0-9]{1}[0-9]{10}">
+ <input type="text" class="input"placeholder="Website ">
+
+ <textarea placeholder="About me..."></textarea>
+</div>
+</div>
+</div>
+ </body> </html> 

@@ -1,0 +1,378 @@
+<html>
+
+<head>
+<title>Easy Banner Free - Manual</title>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="purple" alink="red">
+<p><font face="Verdana" size="2" color="red"><b>Easy Banner - Manual</b></font><font face="Verdana" size="2"><br><br></font><font face="Verdana" size="2" color="blue"><b>Copyright 
+Notice</b></font><font face="Verdana" size="2"><br><b>This script is a freeware. 
+You may distribute it by any way BUT you may not modify it!</b><br><br></font><font face="Verdana" size="2" color="blue"><b>Installation</b></font><font face="Verdana" size="2"><br>Upload 
+all files to your server.<br>Set permission (chmod)&nbsp;of the data directory 
+to 777<br>Run setup.php. It installs 
+the table which we will need and creates some&nbsp;files.<br>Go to the admin area 
+(both username and password are &quot;admin1&quot;), to &quot;configuration&quot; 
+and enter a value to each field.<br>Now you can start to use the script. New 
+users may join by going to  </font><font face="Verdana" size="2" color="blue">index.php</font><font face="Verdana" size="2">, 
+existing users can edit their accounts and see statistic at </font><font face="Verdana" size="2" color="blue">member.php</font><font face="Verdana" size="2">. 
+Each new user must be approved by admin. Until the user is not enabled, his/her 
+banners are not displayed.<br><br></font><font face="Verdana" size="2" color="blue"><b>Customization<br></b></font><font face="Verdana" size="2" color="black">All 
+public pages are based on templates. These are a common HTML pages editable 
+in your favorite editor with some special tags which will be replaced by any 
+value by the scripts. These tags look like #%someword%#. If you don't want some 
+of these values to be available, just remove them from your templates. All the 
+templates may be found in the <b>data/templates</b> directory. On the top of each 
+public page is added content of file <b>_header.txt</b>, on the bottom is added content 
+of file <b>_footer.txt</b>. Both these files may be found in the templates directory 
+as well.<br><br>Below is a short description of each template and list of used 
+variables.<br><br>To show the page where a new user can join your banner exchange 
+is used template <b>join.html</b>. These variables may be used:</font></p>
+<table border="1" cellpadding="3" cellspacing="0">
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%width%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Width of banners in your exchange 
+            system</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%height%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Height of banners in your exchange 
+            system</font></p>
+        </td>
+    </tr>
+</table>
+<p><font face="Verdana" size="2" color="black">To show a &quot;thank you&quot; page is used template <b>join_success.html</b>. Used variables:<br><br></font></p>
+<table border="1" cellpadding="3" cellspacing="0">
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%memberfile%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">URL of where existing users can 
+            log in</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%username%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Username of the new user</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%password%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Password of the new user</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%email%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Email of the new user</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%siteurl%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">URL of the new user</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%banner%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Banner of the new user</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%html%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">HTML code to place on pages of 
+            the new user to get credits</font></p>
+        </td>
+    </tr>
+</table>
+<p><font face="Verdana" size="2" color="black">Now the new user receives an email. This email is based on template <b>email_join.txt</b>. 
+The first line of this&nbsp;template must begin to the word 'Subject:' and below 
+this line must be one blank line. Used variables:<br></font></p>
+<table border="1" cellpadding="3" cellspacing="0">
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%memberfile%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">URL of where existing users can 
+            log in</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%username%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Username of the new user</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%password%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Password of the new user</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%siteurl%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">URL of the new user</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%urlbanner%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Banner of banner of the new user</font></p>
+        </td>
+    </tr>
+</table>
+<p><font face="Verdana" size="2" color="black">Also admin now receives an 
+email. This email is based on template <b>email_admin.txt</b>. 
+The first line of this&nbsp;template must begin to the word 'Subject:' and below 
+this line must be one blank line. Used variables:<br></font></p>
+<table border="1" cellpadding="3" cellspacing="0">
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%adminfile%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">URL of where you&nbsp;can log in 
+            as admin</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%username%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Username of the new user</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%password%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Password of the new user</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%siteurl%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">URL of the new user</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%urlbanner%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Banner URL&nbsp;of the new user</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%memberemail%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Email of the new user</font></p>
+        </td>
+    </tr>
+</table>
+<p><font face="Verdana" size="2" color="black">Existing users can log in at 
+</font><font face="Verdana" size="2" color="blue">member.php</font><font face="Verdana" size="2" color="black">. 
+To show the login form is used template <b>member_login.html</b>. This template 
+doesn't have variables. After the user is logged in, he/she can select from 3 functions. 
+To show this page is used template <b>member_action.html</b>. These variables 
+are available:<br></font></p>
+<table border="1" cellpadding="3" cellspacing="0">
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%username%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Username of the user</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%password%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Password of the user</font></p>
+        </td>
+    </tr>
+</table>
+<p><font face="Verdana" size="2" color="black">If the member selects &quot;Edit account&quot;, 
+a page based on template <b>member_edit.html</b> is displayed. These variables 
+are used:<br></font></p>
+<table border="1" cellpadding="3" cellspacing="0">
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%info%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Once the form is sent out and data 
+            are updated, it shows this info</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%username%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Username of the user</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%password%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Password of the user</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%siteurl%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">URL of the user</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%urlbanner%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Banner URL&nbsp;of the user</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%email%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Email of the user</font></p>
+        </td>
+    </tr>
+</table>
+<p><font face="Verdana" size="2" color="black">If the member selects &quot;Display HTML 
+code&quot;, a page based on template <b>member_html.txt</b> is displayed. There  variables 
+are available:<br></font></p>
+<table border="1" cellpadding="3" cellspacing="0">
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2" color="black">#%html%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2" color="black">The </font><font face="Verdana" size="2">HTML 
+code to place on pages of the user</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%username%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Username of the user</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%password%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Password of the user</font></p>
+        </td>
+    </tr>
+</table>
+<p><font face="Verdana" size="2">If the member selects 
+&quot;Statistic&quot;, a page based on template <b>member_stats.html</b> is displayed. 
+These variables may be used:<br></font></p>
+<table border="1" cellpadding="3" cellspacing="0">
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%username%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Username of the user</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%password%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Password of the user</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%i_m%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Number of banners displayed by 
+            the user</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%i_earned%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Earned credits</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%i_w%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Number of banners displayed for 
+            the user</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><font face="Verdana" size="2">#%i_nu%#</font></p>
+        </td>
+        <td>
+            <p><font face="Verdana" size="2">Not used&nbsp;credits</font></p>
+        </td>
+    </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+
+</html>

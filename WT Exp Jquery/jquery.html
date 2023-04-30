@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0" charset="UTF-8"> <title>Online Book Order</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<script>
+$(document).ready(function() {
+'use strict';
+//	setting the focus to first input element $("#focusable").focus();
+//	showing labels on focus
+$(".custom-input .input").on('blur', function() 
+{
+if ($(this).val() !== '') {
+$(this).parent().addClass('filled');
+} 
+else {
+$(this).parent().removeClass('filled');
+}
+});
+//	setting the background color of the element 
+$(".input").focus(function() 
+{ $(this).css({"background-color":"#ffffb7"}) });
+$(".input").blur(function() {
+$(this).css({"background":"transparent"}) 
+});
+//	detecting the key pressed on the keyboard 
+
+$(".input").keypress(function(e){
+    console.log(e.keyCode || e.which);
+});
+$("#response input").on('change', function() {
+if ($("[type='radio']:checked").val() === 'yes') {
+ $("#shippingaddress").hide();
+} else {
+$("#shippingaddress").show();
+}
+});
+//	getting the checked or selected items
+$(".selected-items input").on('change', function() { 
+    if (this.checked) {
+var getCheckBoxes = $('input[name=product]'); 
+getCheckBoxes.each(function() {
+if (!$(this).is(':checked')) {
+$("." + $(this).val()).hide();
+}
+});
+} else {
+var getCheckBoxes = $('input[name=product]'); getCheckBoxes.each(function() {
+$("." + $(this).val()).show();
+});
+}
+});
+//	fade toggling a product explanation div and other mouse events 
+$("img").on('click', function() {
+$("." + $(this).attr('alt') + "-exp").fadeToggle(500);
+$("." + $(this).attr('alt') + "-exp p").on('mouseenter',function() { 
+$(this).css('background-color', 'Lightgreen');
+var words = $(this).first().text().split( /\s+/ );
+var text = words.join( "</span> <span>" );
+$(this).first().html( "<span>" + text + "</span>" );
+$( "span" ).on( "click", function() {
+$(this).css( "background-color", "#ffddc3"
+);
+});
+}).on('mouseleave', function() {
+$(this).css('background', 'transparent');
+});
+});
+$(".btn").on('click', function() {
+    alert('Your Order is Successful!!');
+});
+});
+</script>
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family:	sans-serif;
+}
+.product-details img {
+margin: 5px 0 5px 0;
+float: left;
+border: 1px solid #000000;
+border-radius: 10px;
+}
+img:hover {
+transform: scale(1.1);
+cursor: pointer;
+}
+input {
+margin: 7px 0 7px 7px;
+}
+#shippingaddress {
+display: none;
+}
+.product-details label {
+font-size: large;
+margin-left: 1%;
+}
+body{
+background-image: url("Library.jpg");
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+height: 100vh;
+}
+.header {
+font-size: 5rem;
+border-bottom: 2px solid black;
+padding: 0 10px 5px;
+color:red;
+font-family: "Comic Sans MS", cursive, sans-serif;
+text-align: center;
+}
+#side-to-side {
+display: flex;
+}
+.wrapper{
+margin: 1% 0 1% 0;
+position: absolute;
+width: 100%;
+padding: 0 20px;
+}
+.contact-form{
+max-width: 1000px;
+margin: 0 auto;
+background: cyan;
+padding: 30px;
+border-radius: 15px;
+box-shadow: 0 0 10px #f4f3ef;
+}
+.custom-input {
+position: relative;
+}
+.custom-input input:focus {
+outline: 0;
+}
+.custom-input input + label {
+position: absolute;
+top: 30px;
+left: 10px;
+color: #dc1c13;
+opacity: 0.5;
+transition: .5s;
+}
+.custom-input input:focus + label,
+.filled input + label {
+top: 0;
+left: 0;
+font-size: 18px;
+color: #dc1c13;
+opacity: 1;
+}
+.input-fields,
+ .formalities{
+width: 50%;
+}
+.input,
+.custom-input .input,
+.formalities textarea{
+margin: 20px 0;
+background: transparent;
+padding: 10px;
+color: #dc1c13;
+border: 1px solid black;
+margin-right: 2%;
+border-radius: 4px;
+font-size: 15px;
+}
+.btn {
+background: #57e86b;
+text-align: center;
+padding: 15px;
+border-radius: 5px;
+color: #fff;
+cursor: pointer;
+text-transform: uppercase;
+}
+::-webkit-input-placeholder {
+/* Chrome/Opera/Safari */
+color: #dc1c13;
+opacity: 0.5;
+}
+@media screen and (max-width: 600px){
+.contact-form{
+flex-direction: column;
+}
+.formalities textarea{
+height: 80px;
+}
+.input-fields,
+.formalities{
+width: 100%;
+}
+}
+</style>
+<div class="wrapper">
+<div class="contact-form">
+<div class="header">Order Books online</div>
+<div class="input-fields">
+<br>
+<text style="font-size: large;color: #dc1c13;float: left;">Our Best Sellers</text> <div class="selected-items" style="float: right;">
+<input type="checkbox" id="check">
+ <label for="check" style="color:#dc1c13;"> Show selected items </label>
+</div>
+<br><br>
+<div style="color: #dc1c13;"class="product-details">
+<div class="Idali" style="padding: 3px;">
+<img title="Click to toggle description" src="Idali.jpg" alt="Idali" width="80px" height="80px">
+<input type="checkbox" id="product1" name="product" value="Idali"> 
+<label for="product"> Idali Orchid and Will power <b>₹ 400</b></label><br> 
+<div style="padding: 15px;"></div>
+<label	for="qty">Quantity </label>
+<select>
+<option value="1"selected>1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>
+<div class="Idali-exp "style="display: none;">
+<br>
+<p style="border: 1.5px solid lightgrey; border-radius: 3px; padding: 5px">
+An Autobiography of a successful entrepreneur & his inspiring experiences shared since commencement of a small hotel to a five starer hotel Orchid.
+</p>
+</div>
+</div>
+<br>
+<div class="Yayati" style="padding: 3px;">
+<img title="Click to toggle description" src="Yayati.jpg" alt="Yayati" width="80px"height="80px">
+<input type="checkbox" id="product2" name="product" value="Yayati"> <label for="product"> Yayati<b>₹ 525</b></label><br>
+<div style="padding: 15px;"></div>
+<label for="qty">Quantity </label>
+<select>
+<option value="1"selected>1</option>
+<option value="2">2</option>
+ <option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>
+<div class="Yayati-exp"style="display: none;">
+<br>
+<p style="border: 1.5px solid lightgrey; border-radius: 3px; padding: 5px">The story of Yayati is perhaps one of the most intriguing and fascinating episodes of Mahabharata. Yayati was a great scholar and one of the noblest rulers of olden times. He followed the shastras and was devoted to the welfare of his subjects. Even the King of Gods, Indra, held him in high esteem. Married to seductively beautiful Devyani, in love with her maid Sharmishtha, and father of five sons from two women, yet Yayati unabashedly declares, My lust for pleasure is unsatisfied. His quest for the carnal continued, sparing not even his youngest son, and exchanging his old age for his son s youth. </p>
+</div>
+</div>
+<br>
+<div class="Mrutyunjay" style="padding: 3px;">
+<img title="Click to toggle description" src="Mrutunjay.jpg " alt="Mrutyunjay" width="80px" height="80px"> 
+<input type="checkbox" id="product3"name="product" value="Mrutyunjay">
+<label for="product"> Mrutyunjay <b>₹ 200</b></label><br> 
+<div style="padding: 15px;"></div> 
+<label for="qty">Quantity </label>
+<select>
+<option value="1"selected>1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>
+<div class="Mrutyunjay-exp"style="display: none;">
+<br>
+<p style="border: 1.5px solid lightgrey; border-radius: 3px; padding: 5px">
+    The search for the meaning of Being is man's eternal quest and the subject of his greatest creations. Shivaji Sawant's Mrityunjaya is an outstanding instance of such a literary masterpiece in which a contemporary Marathi novelist investigates the meaning of the bewildering skein that is life through the personae of the Mahabharata protagonists. For over two decades since its first publication the vast non- Marathi and non-Hindi readership remained deprived of this remarkable exploration of the human psyche till the publication of this English translation by the Writers workshop – a contribution for which there is much to be grateful for.</p>
+</div>
+</div>
+<br>
+ <div class="Shyamchi Aai" style="padding: 3px;">
+<img title="Click to toggle description" src="Shyamchi Aai.jpg " alt="Shyamchi Aai" width="80px" height="80px"> 
+<input type="checkbox" id="product3"name="product" value="Shyamchi Aai">
+<label for="product"> Shyamchi Aai <b>₹ 350</b></label><br> 
+    <div style="padding: 15px;"></div> 
+    <label for="qty">Quantity </label>
+    <select>
+    <option value="1"selected>1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>    
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+    </select>
+    <div class="Shyamchi Aai-exp"style="display: none;">
+    <br>
+    <p style="border: 1.5px solid lightgrey; border-radius: 3px; padding: 5px">
+        Shyamchi Aai is considered an iconic piece of work in Marathi literature even after so many decades, and reasonably so. It beautifully depicts how the greatness of a mother's love and her moral upbringing moulds her children - especially Shyam, who supposedly is the great author Sane Guruji himself as a teenager - into fine human beings.</p>
+</div>
+</div>
+<br>
+    <div class="Yugandhar" style="padding: 3px;">
+        <img title="Click to toggle description" src="Yugandhar.jpeg " alt="Yugandhar" width="80px" height="80px"> 
+        <input type="checkbox" id="product3"name="product" value="Yugandhar">
+        <label for="product"> Yugandhar <b>₹ 250</b></label><br> 
+        <div style="padding: 15px;"></div> 
+        <label for="qty">Quantity </label>
+        <select>
+        <option value="1"selected>1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        </select>
+        <div class="Yugandhar-exp"style="display: none;">
+        <br>
+        <p style="border: 1.5px solid lightgrey; border-radius: 3px; padding: 5px">
+            Yugandhar- is a brilliant piece of work from Shivaji Sawant. Author tries hard to contain the protagonist within human sphere but also surrenders to the divinity at appropriate places. Immense detailing takes the reader into that era. It is a long long piece of text but something worth having and passing onto generations.        </p>
+        </div>
+        </div>
+        <br>
+</div>
+<div id="side-to-side">
+<div class="custom-input"style="margin-right: 2%;">
+<input id="focusable"type="text" class="input" name="firstname" value="">
+<label for="">First Name</label>
+</div>
+<div class="custom-input">
+<input type="text"class="input" name="lastname" value="">
+<label for="">Last Name</label>
+</div>
+</div>
+<div class="custom-input">
+<input style="width: 85%;"type="text" name="email" value="" class="input"> <label for="">Email</label> </div>
+<div id="side-to-side">
+<div class="custom-input">
+<input style="width:65px;"type="text" class="input" name="code" value=""> <label for="">Code</label>
+</div>
+<text style="padding: 28px 10px 010px; color: #fff;">- </text>
+<div class="custom-input">
+<input type="text"class="input" name="phonenumber" value="">
+<label for="">Phone Number</label>
+</div>
+</div>
+</div>
+<div class="formalities">
+<br>
+<label for="" style="color: #dc1c13;font-size: larger;">Billing Address</label>
+<textarea class="input" rows="2" cols="60"placeholder="Enter your address here..."></textarea>
+<div id="side-to-side">
+<div class="custom-input"style="margin-right: 2%;">
+<input type="text"class="input" name="city" value=""> 
+<label for="">City</label>
+</div>
+<div class="custom-input">
+<input type="text"class="input" name="place" value="">
+<label for="">State /Province</label>
+</div>
+</div>
+<div id="side-to-side">
+<div class="custom-input">
+<input style="width: 180px;"type="text" class="input" name="zipcode" value=""> <label for="">Postal / ZipCode</label>
+</div>
+<select style="width: 350px;margin-left: 2%; background-color: #f4f3ef;" id="country"name="country" class="input">
+<option value="Select">--Select Country --</option>
+<option value="India">India</option>
+<option value="Australia">Australia</option>
+<option value="Germany">Germany</option>
+<option value="USA">USA</option>
+</select>
+</div>
+<br>
+<text style="color: #dc1c13;">Is the shipping address same as billing address?</text><br><br> <span id="response">
+<input type="radio" name="residence"value="yes">
+<label for="yes" style="color:#dc1c13; padding-right: 20px;"> Yes</label>
+<input type="radio" name="residence"value="no">
+<label for="no" style="color:#dc1c13;"> No</label>
+</span>
+<br><br>
+<div id="shippingaddress">
+<label for="" style="color: #dc1c13;font-size: larger;">Shipping Address</label>
+<textarea class="input" rows="2"cols="60" placeholder="Enter your address here..."></textarea>
+<div id="side-to-side">
+<div class="custom-input"style="margin-right: 2%;">
+<input type="text"class="input" name="city" value="">
+<label for="">City</label>
+</div>
+<div class="custom-input">
+<input type="text"class="input" name="place" value="">
+<label for="">State</label>
+</div>
+</div>
+<div id="side-to-side">
+<div class="custom-input">
+<input style="width:180px;" type="text" class="input" name="zipcode" value="">
+<label for="">Postal /Zip Code</label>
+</div>
+<select style="width: 350px;margin-left: 2%; background-color: #f4f3ef;" id="country"name="country" class="input">
+<option value="Select">--Select Country --</option>
+<option value="India">India</option>
+<option value="Australia">Australia</option>
+<option value="Germany">Germany</option>
+<option value="USA">USA</option>
+</select>
+</div>
+<br>
+</div>
+<text style="color: #dc1c13;">Send gift?</text><br><br>
+<input type="radio" name="gift"value="yes">
+<label for="yes" style="color: #dc1c13;padding-right: 20px;"> Yes</label>
+<input type="radio" name="gift"value="no">
+<label for="no" style="color: #dc1c13;">No</label>
+<br><br>
+<label for="" style="color: #dc1c13; font-size: larger;">Special Instructions</label> <textarea class="input" rows="4" cols="45" placeholder="Any special instructions..."></textarea> </div>
+<div class="btn" >Order Now !</div>
+</div>
+</div>
+ </body>

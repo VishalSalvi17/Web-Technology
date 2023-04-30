@@ -1,0 +1,12 @@
+polls
+
+id
+pollid
+ipaddress
+
+questions
+
+id
+question
+count
+pollid

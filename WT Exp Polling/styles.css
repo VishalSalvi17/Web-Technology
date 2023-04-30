@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Monda&display=swap');
+* {
+    font-family: 'Monda', sans-serif;
+}
+
+.side-to-side {
+    display: flex;
+    justify-content: space-around;
+}
+
+.wrapper {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+}
+
+img {
+    opacity: 1;
+    display: block;
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    border: 1.5px solid lightslategrey;
+}
+
+.content {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    font-size: 50px;
+    color: lightslategrey;
+    white-space: nowrap;
+    justify-content: center;
+}
+
+.content button {
+    font-size: 24px;
+    display: block;
+    background-color: dodgerblue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    transform: translateX(100%);
+    color: white;
+}
+
+.overlay {
+    opacity: 0;
+}
+
+.wrapper:hover img {
+    filter: brightness(30%);
+    cursor: pointer;
+}
+
+.wrapper:hover .overlay {
+    opacity: 1;
+}
